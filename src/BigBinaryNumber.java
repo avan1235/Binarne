@@ -1,5 +1,3 @@
-import javax.swing.plaf.PanelUI;
-
 /**
  * Created by Maciej Procyk on 26.03.2018.
  */
