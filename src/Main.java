@@ -18,7 +18,7 @@ public class Main{
             BigBinaryNumber maxNumber = new BigBinaryNumber("0");
             int maxIndex = 0;
 
-            int k = 11;
+            int k = 1;
 
             while (inputData.hasNextLine()){
                 String stringLine = inputData.nextLine();
