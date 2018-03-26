@@ -52,6 +52,13 @@ public class BigBinaryNumber {
         return (this.number.charAt(this.number.length() - 1) == '0') && (this.number.charAt(this.number.length() - 2) == '0') && (this.number.charAt(this.number.length() - 3) == '0');
     }
 
+    /**
+     * Porównywanie dwóch liczb, z których jedna jest aktualnym aobiektem, a druga to obiekt będący argumentem
+     * funkcji, do którego wartości .number mamy dostęp, gdyż jest członkiem tej samej klasy
+     *
+     * Jeżeli secondNumber jest mniejsza, zwraca 1, jak jest większa zwraca -1, a gdy równe liczby zwraca 0
+     */
+
     public int compareTo(BigBinaryNumber secondNumber){
         if (this.number.length() > secondNumber.number.length())
             return 1;
