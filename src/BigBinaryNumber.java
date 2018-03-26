@@ -35,4 +35,40 @@ public class BigBinaryNumber {
 
         return hMO;
     }
+
+    public int length(){
+        return this.number.length();
+    }
+
+    public boolean ifDividedByTwo(){
+        if (this.number.charAt(this.number.length()-1) == '0')
+            return true;
+        else
+            return false;
+    }
+
+    public boolean ifDividedByEight(){
+        if ((this.number.charAt(this.number.length()-1) == '0') && (this.number.charAt(this.number.length()-2) == '0') && (this.number.charAt(this.number.length()-3) == '0'))
+            return true;
+        else
+            return false;
+    }
+
+    public int compareTo(BigBinaryNumber secondNumber){
+        if (this.number.length() > secondNumber.number.length())
+            return 1;
+        else if (this.number.length() == secondNumber.number.length()){
+            for (int i = 0; i<this.number.length(); i++){
+                if(this.number.charAt(i) != secondNumber.number.charAt(i)){
+                    if (this.number.charAt(i) == '1')
+                        return 1;
+                    else
+                        return -1;
+                }
+            }
+            return 0;
+        }
+        else
+            return -1;
+    }
 }
