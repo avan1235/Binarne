@@ -48,6 +48,10 @@ public class BigBinaryNumber {
         return this.number.charAt(this.number.length() - 1) == '0';
     }
 
+    /**
+     * Przy dzieleniu przez osiem wymaga się, by trzy ostatnie cyfry były zerami
+     */
+
     public boolean ifDividedByEight(){
         return (this.number.charAt(this.number.length() - 1) == '0') && (this.number.charAt(this.number.length() - 2) == '0') && (this.number.charAt(this.number.length() - 3) == '0');
     }
