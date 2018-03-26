@@ -1,3 +1,5 @@
+import javax.swing.plaf.PanelUI;
+
 /**
  * Created by Maciej Procyk on 26.03.2018.
  */
@@ -14,6 +16,10 @@ public class BigBinaryNumber {
 
     BigBinaryNumber(long number){
         this.number = Long.toString(number);
+    }
+
+    public String getValue(){
+        return this.number;
     }
 
     public int howManyZeros(){
@@ -41,17 +47,11 @@ public class BigBinaryNumber {
     }
 
     public boolean ifDividedByTwo(){
-        if (this.number.charAt(this.number.length()-1) == '0')
-            return true;
-        else
-            return false;
+        return this.number.charAt(this.number.length() - 1) == '0';
     }
 
     public boolean ifDividedByEight(){
-        if ((this.number.charAt(this.number.length()-1) == '0') && (this.number.charAt(this.number.length()-2) == '0') && (this.number.charAt(this.number.length()-3) == '0'))
-            return true;
-        else
-            return false;
+        return (this.number.charAt(this.number.length() - 1) == '0') && (this.number.charAt(this.number.length() - 2) == '0') && (this.number.charAt(this.number.length() - 3) == '0');
     }
 
     public int compareTo(BigBinaryNumber secondNumber){
