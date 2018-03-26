@@ -28,7 +28,7 @@ public class Main{
                     minNumber = actLineNumber;
                     minIndex = k;
                     maxNumber = actLineNumber;
-                    minIndex = k;
+                    maxIndex = k;
                     readFirst = true;
                 }
 
@@ -53,12 +53,11 @@ public class Main{
                 k++;
             }
 
-
             System.out.println("Ile ma więcej zer niż jedynek: " + howManyMore);
             System.out.println("Podzielnych przez dwa: " + howManyByTwo);
             System.out.println("Podzielnych przez osiem: " + howManyByEight);
-            System.out.println("Najmniejsza w linii " + minIndex + " to: " + minNumber.getValue());
-            System.out.println("Największa w linii " + maxIndex + " to: " + maxNumber.getValue());
+            System.out.println("Najmniejsza w linii " + minIndex + " to: " + minNumber.toBigInteger());
+            System.out.println("Największa w linii " + maxIndex + " to: " + maxNumber.toBigInteger());
 
             inputData.close();
         }

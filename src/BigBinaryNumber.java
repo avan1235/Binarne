@@ -1,3 +1,6 @@
+import java.math.BigInteger;
+import java.security.PublicKey;
+
 /**
  * Created by Maciej Procyk on 26.03.2018.
  */
@@ -79,5 +82,50 @@ public class BigBinaryNumber {
         }
         else
             return -1;
+    }
+
+    public BigBinaryNumber add(BigBinaryNumber secondNumber){
+        StringBuilder result = new StringBuilder();
+        int len = (this.length()>secondNumber.length()?this.length():secondNumber.length());
+        int actBuffor = 0;
+        int toRemember = 0;
+        for (int i = 1; i <= len; i++){
+            actBuffor = 0;
+
+            if (this.length()-i >= 0)
+                actBuffor += Character.getNumericValue(this.getValue().charAt(this.length()-i));
+            if (secondNumber.length()-i >= 0)
+                actBuffor += Character.getNumericValue(secondNumber.getValue().charAt(secondNumber.length()-i));
+
+            actBuffor += toRemember;
+
+            if (actBuffor%2 == 0)
+                result.append("0");
+            else
+                result.append("1");
+
+            if (actBuffor > 1)
+                toRemember = 1;
+            else
+                toRemember = 0;
+        }
+        if (toRemember == 1)
+            result.append("1");
+
+        String resultNumber = result.reverse().toString();
+        BigBinaryNumber toReturn = new BigBinaryNumber(resultNumber);
+        return toReturn;
+    }
+
+    public BigInteger toBigInteger(){
+        BigInteger number = BigInteger.valueOf(0);
+        BigInteger multiplay = BigInteger.valueOf(1);
+
+        for(int i = 1; i <= this.length(); i++){
+            number = number.add(multiplay.multiply(BigInteger.valueOf(Character.getNumericValue(this.getValue().charAt(this.length()-i)))));
+            multiplay = multiplay.multiply(BigInteger.valueOf(2));
+        }
+
+        return number;
     }
 }
