@@ -35,7 +35,7 @@ public class BigBinaryNumber {
     public int howManyOnes(){
         int hMO = 0;
         for(int i = 0; i<this.number.length(); i++){
-            if(this.number.charAt(i) =='i')
+            if(this.number.charAt(i) =='1')
                 hMO++;
         }
 
